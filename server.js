@@ -5,12 +5,57 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne ={
+    title:'Article - one | Sunu JOhns',
+    heading:'Article 1',
+    date:'Sept 27,2016',
+    content:`<P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.</P>
+            <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.</P>
+            <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.This is my First Article. This is good.
+            This is my First Article. This is good.</P>`
+};
+
+function createTemplate(data){
+    var title=data.title;
+    var heading = data.heading;
+    var date =  data.date;
+    var content = data.content;
+var htmlTemplate =`<!DOCTYPE html>
+<html>
+    <head>
+        <title>${title} </title>
+        <meta name = "viewport" content = "width-device-width initial-scale-1"/>
+        <link href="/ui/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class = "container">
+        <div>
+        <a href= "/" > HOME</a>
+        </div>
+        <hr/>
+        <h3>${heading}</h3>
+        <div>${date}</div>
+        <div>
+            ${content}
+        </div>
+        </div>
+    </body>
+</html>
+`; 
+return htmlTemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one',function(req,res){
-     res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+     res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two',function(req,res){
