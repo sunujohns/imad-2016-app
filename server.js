@@ -5,19 +5,37 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={
-    title:'Article - one | Sunu JOhns',
-    heading:'Article 1',
-    date:'Sept 27,2016',
-    content:`<P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.</P>
-            <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.</P>
-            <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.This is my First Article. This is good.
-            This is my First Article. This is good.</P>`
+var articles = {
+    var articleOne:{
+        title:'Article - one | Sunu JOhns',
+        heading:'Article 1',
+        date:'Sept 27,2016',
+        content:`<P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.</P>
+                <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.</P>
+                <P>This is my First Article. This is good.This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.This is my First Article. This is good.
+                This is my First Article. This is good.</P>`
+    },
+    var articleTwo:{
+        title:'Article - Two | Sunu JOhns',
+        heading:'Article 2',
+        date:'Sept 28,2016',
+        content:`<P>This is my Second Article. This is good.This is my Second Article. This is good.This is my Second Article. This is good.
+                </P>`
+    },
+    var articleThree :{
+        title:'Article - Three | Sunu JOhns',
+        heading:'Article 3',
+        date:'Sept 29,2016',
+        content:`<P>This is my Third Article. This is good.This is my Third Article. This is good.This is my Third Article. This is good.
+                This is my Third Article. This is good.This is my Third Article. This is good.
+                This is my First Article. This is good.</P>`
+                
+    }
 };
 
 function createTemplate(data){
