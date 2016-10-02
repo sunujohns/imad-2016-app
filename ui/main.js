@@ -8,5 +8,11 @@ element.innerHTML = "New Value";
 
 var img  = document.getElementById("madi");
 img.onclick = function() {
-    img.style.marginleft = '100px';
+    var marginLeft = 10;
+    function moveRight(){
+        marginLeft = marginLeft + 10;
+        img.style.marginLeft = marginLeft+'px';
+    }
+    var interval = setInterval(moveRight , 100);
+    
 };
