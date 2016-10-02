@@ -16,7 +16,7 @@ button.onclick =function(){
   };
   //make request
   
-  request.open('GET','http://http://sunujohns.imad.hasura-app.io/counter',true);
+  request.open('GET','http://sunujohns.imad.hasura-app.io/counter',true);
   request.send(null);
   
 };
