@@ -21,7 +21,8 @@ button.onclick =function(){
   
 };
 
-var nameInput = document.getElementById('name');
+
+var submit = document.getElementById('submit_btn');
 
 submit.onclick =  function(){
     
@@ -43,8 +44,9 @@ submit.onclick =  function(){
           }
       }
     };
+    var nameInput = document.getElementById('name');
     var name = nameInput.value;
-    var submit = document.getElementById('submit_btn');
+
 
    
   request.open('GET','http://sunujohns.imad.hasura-app.io/submit-name?name='+name,true);
